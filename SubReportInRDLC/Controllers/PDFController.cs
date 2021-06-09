@@ -3,8 +3,6 @@ using SubReportInRDLC.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SubReportInRDLC.Controllers
@@ -32,6 +30,7 @@ namespace SubReportInRDLC.Controllers
             };
 
             #endregion
+
             const string reportName = "Test Sub Reports In RDLC";
             const string reportPath = "~/RDLC/";
             const string rdlcName = "MainReports.rdlc";
@@ -52,18 +51,18 @@ namespace SubReportInRDLC.Controllers
         private void ReportViewer_SubreportProcessing(object sender, SubreportProcessingEventArgs e, List<Employee> listOfEmployeeSubReports)
         {
             if (listOfEmployeeSubReports != null)
-            {
                 switch (e.ReportPath)
                 {
                     case "SubReports":
                         var departmentId = Convert.ToInt32(e.Parameters[0].Values[0]);
                         listOfEmployeeSubReports = listOfEmployeeSubReports.FindAll(a => a.DepartmentId == departmentId);
+                        if (listOfEmployeeSubReports == null)
+                            break;
 
                         var data = new ReportDataSource("Employees", listOfEmployeeSubReports);
                         e.DataSources.Add(data);
                         break;
                 }
-            }
         }
     }
 }
