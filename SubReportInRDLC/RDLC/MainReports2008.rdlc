@@ -163,7 +163,7 @@
                 <TablixCell>
                   <CellContents>
                     <Subreport Name="SubReports">
-                      <ReportName>SubReports</ReportName>
+                      <ReportName>SubReports2008</ReportName>
                       <Parameters>
                         <Parameter Name="Id">
                           <Value>=Fields!Id.Value</Value>
@@ -206,7 +206,7 @@
         <DataSetName>Departments</DataSetName>
         <Top>0.47792in</Top>
         <Left>0.05in</Left>
-        <Height>1.01042in</Height>
+        <Height>1.01043in</Height>
         <Width>6.03125in</Width>
         <Style>
           <Border>
@@ -221,7 +221,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Sub Reports In RDLC</Value>
+                <Value>Sub Reports In RDLC 2008</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -299,7 +299,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-	
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>47be7ba3-1228-41c9-a529-9caa987f3192</rd:ReportID>
 </Report>
