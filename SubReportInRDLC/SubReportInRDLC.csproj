@@ -235,10 +235,18 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="RDLC\MainReports2008.rdlc" />
-    <EmbeddedResource Include="RDLC\MainReports2016.rdlc" />
-    <EmbeddedResource Include="RDLC\SubReports2008.rdlc" />
-    <EmbeddedResource Include="RDLC\SubReports2016.rdlc" />
+    <Content Include="RDLC\MainReports2008.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLC\MainReports2016.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLC\SubReports2008.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLC\SubReports2016.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
