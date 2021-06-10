@@ -35,7 +35,7 @@ namespace SubReportInRDLC.Controllers
         // GET: PDF/SubReports2008
         public ActionResult SubReports2008()
         {
-            const string reportName = "Test Sub Reports In RDLC";
+            const string reportName = "Test Sub Reports In RDLC 2008";
             const string reportPath = "~/RDLC/";
             const string rdlcName = "MainReports2008.rdlc";
             var reportViewer = new LocalReport { EnableExternalImages = true };
@@ -49,14 +49,14 @@ namespace SubReportInRDLC.Controllers
             reportViewer.Refresh();
 
             string mimeType;
-            var renderedBytes = ReportUtility.RenderedReportViewer(reportViewer, "PDF", out mimeType, reportName);
+            var renderedBytes = ReportUtility.RenderedReportViewer(reportViewer, "PDF", out mimeType, reportName, isDownloadable: true);
             return File(renderedBytes, mimeType);
         }
 
         // GET: PDF/SubReports2016
         public ActionResult SubReports2016()
         {
-            const string reportName = "Test Sub Reports In RDLC";
+            const string reportName = "Test Sub Reports In RDLC 2016";
             const string reportPath = "~/RDLC/";
             const string rdlcName = "MainReports2016.rdlc";
             var reportViewer = new LocalReport { EnableExternalImages = true };
