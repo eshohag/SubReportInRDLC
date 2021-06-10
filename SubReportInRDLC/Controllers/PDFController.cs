@@ -3,6 +3,7 @@ using SubReportInRDLC.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace SubReportInRDLC.Controllers
@@ -33,7 +34,7 @@ namespace SubReportInRDLC.Controllers
         }
 
         // GET: PDF/SubReports2008
-        public ActionResult SubReports2008()
+        public async Task<ActionResult> SubReports2008()
         {
             const string reportName = "Test Sub Reports In RDLC 2008";
             const string reportPath = "~/RDLC/";
@@ -50,7 +51,7 @@ namespace SubReportInRDLC.Controllers
 
             string mimeType;
             var renderedBytes = ReportUtility.RenderedReportViewer(reportViewer, "PDF", out mimeType, reportName, isDownloadable: true);
-            return File(renderedBytes, mimeType);
+            return await Task.Run(() => File(renderedBytes, mimeType));
         }
 
         // GET: PDF/SubReports2016
